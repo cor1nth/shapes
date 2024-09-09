@@ -2,18 +2,29 @@
 
 // Rectangle class
 public class Rectangle {
-  int height;
-  int width;
+  double height;
+  double width;
   String rectDem;
   
-  
+// Rectangle
+public Rectangle() {
+    height = 1;
+    width = 1;
+  }
 
-  public Rectangle(int y, int x) {
+// Rectangle with double len
+public Rectangle(int y) {
+    height = y;
+    width = y;
+  }
+  
+//Rectangle with double len double wid
+  public Rectangle(double y, double x) {
     height = y;
     width = x;
   }
   public String toString() {
-    rectDem = "A rectangle with a height of " + height + " and a width of " + width;
+    rectDem = "rectangle with height " + height + ", width " + width;
     return rectDem;
 }
   
@@ -21,7 +32,7 @@ public class Rectangle {
 
 class MethodExplorer {
 	public static void main(String[] args) {
-    	Rectangle myRect = new Rectangle(5, 4);
+    	Rectangle myRect = new Rectangle();
     	System.out.println(myRect);
   }
 }
