@@ -95,6 +95,13 @@ class Circle {
     radius = r;
     return radius;
   }
+  // scale same way
+  double scale(double scal) {
+    radius = radius * scal;
+    return radius;
+  }
+  // scale two ways
+
 
   public String toString() {
     circleDem = "circle with radius " + radius;
@@ -248,9 +255,11 @@ class RegularPolygon {
 
 class MethodExplorer {
   public static void main(String[] args) {
-    RegularPolygon myRect = new RegularPolygon();
+    Circle myCircle = new Circle(3);
+    System.out.println(myCircle);
 
-    System.out.println(myRect);
+    myCircle.scale(2.2);
+    System.out.println(myCircle);
     
   }
 }
