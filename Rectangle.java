@@ -145,58 +145,7 @@ class RegularPolygon {
   // get area
   // kill me
   double getArea() {
-    // triangle
-    if(sides == 3) {
-      area = ((Math.sqrt(3)/4) * length) * ((Math.sqrt(3)/4) * length);
-    }
-    // square
-    if(sides == 4) {
-      area = length * length;
-    }
-    // pentagon
-    if(sides == 5) {
-      area = (1/4) * (length * length) * (Math.sqrt(5 * (5 + (2 * Math.sqrt(5)))));
-    }
-    // hexagon
-    if(sides == 6) {
-      area = ((3 * Math.sqrt(3)) / 2) * (length * length);
-    }
-    // septagon
-    if(sides == 7) {
-      area = (7/4) * (length * length) + (1/Math.tan(180/7));
-    }
-    // octagon
-    if(sides == 8) {
-      area = 2 * (1 + Math.sqrt(2)) * (length * length);
-    }
-    // nonagon
-    if(sides == 9) {
-      area = (9/4) * (length * length) * (1/Math.tan(180/9));
-    }
-    // decagon
-    if(sides == 10) {
-      area = (5/2) * (length * length) * (Math.sqrt(5 + (2*Math.sqrt(5))));
-    }
-    // hendecagon
-    if(sides == 11) {
-      area = (11/4) * (length * length) * (1/Math.tan(3.14/11));
-    }
-    // dodecagon
-    if(sides == 12) {
-      area = 3 * (2 + Math.sqrt(3)) * (length * length);
-    }
-    // tridecagon
-    if(sides == 13) {
-      area = (13/4) * (length * length) * (1/Math.tan(3.14/13));
-    }
-    // tetradecagon
-    if(sides == 14) {
-      area = (14 * (length * length)) / (4 * (Math.tan(3.14/14)));
-    }
-    // pendedecagon
-    if(sides == 15) {
-      area = (15/4) * (length * length) * (1/Math.tan(3.14/15));
-    }
+    area = (sides * (length * length)) / (4.0 * Math.tan((Math.PI / sides)));
     return area;
   }
 
