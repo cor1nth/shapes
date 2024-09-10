@@ -1,3 +1,5 @@
+// imports
+import java.lang.Math;
 // Rectangle class
 class Rectangle {
   double length;
@@ -101,14 +103,213 @@ class Circle {
 
 }
 
+// Regular Polygon :(
+class RegularPolygon {
+  int sides;
+  double length;
+  double perimeter;
+  double area;
+  String regDem;
+
+  // regular polygon
+  public RegularPolygon() {
+    sides = 3;
+    length = 1;
+  }
+  // regular polygon with given side length
+  public RegularPolygon(double l) {
+    sides = 3;
+    length = l;
+  }
+  // regular polygon with gigven number of sides
+  public RegularPolygon(int s) {
+    sides = s;
+    length = 1;
+  }
+  // regular polygon with given number of sides and given side length
+  public RegularPolygon(int s, double l) {
+    sides = s;
+    length = l;
+  }
+
+  // add one side if amount is not specified
+  int addSides() {
+    sides++;
+    return sides;
+  } 
+  // add specified number of sides
+  int addSides(int ps) {
+    sides = sides + ps;
+    return sides;
+  }
+  // get area
+  // kill me
+  double getArea() {
+    // triangle
+    if(sides == 3) {
+      area = ((Math.sqrt(3)/4) * length) * ((Math.sqrt(3)/4) * length);
+    }
+    // square
+    if(sides == 4) {
+      area = length * length;
+    }
+    // pentagon
+    if(sides == 5) {
+      area = (1/4) * (length * length) * (Math.sqrt(5 * (5 + (2 * Math.sqrt(5)))));
+    }
+    // hexagon
+    if(sides == 6) {
+      area = ((3 * Math.sqrt(3)) / 2) * (length * length);
+    }
+    // septagon
+    if(sides == 7) {
+      area = (7/4) * (length * length) + (1/Math.tan(180/7));
+    }
+    // octagon
+    if(sides == 8) {
+      area = 2 * (1 + Math.sqrt(2)) * (length * length);
+    }
+    // nonagon
+    if(sides == 9) {
+      area = (9/4) * (length * length) * (1/Math.tan(180/9));
+    }
+    // decagon
+    if(sides == 10) {
+      area = (5/2) * (length * length) * (Math.sqrt(5 + (2*Math.sqrt(5))));
+    }
+    // hendecagon
+    if(sides == 11) {
+      area = (11/4) * (length * length) * (1/Math.tan(3.14/11));
+    }
+    // dodecagon
+    if(sides == 12) {
+      area = 3 * (2 + Math.sqrt(3)) * (length * length);
+    }
+    // tridecagon
+    if(sides == 13) {
+      area = (13/4) * (length * length) * (1/Math.tan(3.14/13));
+    }
+    // tetradecagon
+    if(sides == 14) {
+      area = (14 * (length * length)) / (4 * (Math.tan(3.14/14)));
+    }
+    // pendedecagon
+    if(sides == 15) {
+      area = (15/4) * (length * length) * (1/Math.tan(3.14/15));
+    }
+    return area;
+  }
+
+  // get num sides
+  int getNumSides() {
+    return sides;
+  }
+  // get perimeter
+  double getPerimeter() {
+    perimeter = sides * length;
+    return perimeter;
+  }
+  // get side length
+  double getSideLength() {
+    return length;
+  }
+  // set num sides
+  int setNumSide(int ss) {
+    sides = ss;
+    return sides;
+  }
+  //set side length
+  double setSideLength(int sl) {
+    length = sl;
+    return length;
+  }
+
+  // string output
+  public String toString() {
+    // triangle
+    if(sides == 3) {
+      regDem = "equilateral triangle with side length " + length;
+      return regDem;
+    }
+    // square
+    if(sides == 4) {
+      regDem = "square with side length " + length;
+      return regDem;
+    }
+    // pentagon
+    if(sides == 5) {
+      regDem = "pentagon with side length " + length;
+      return regDem;
+    }
+    // hexagon
+    if(sides == 6) {
+      regDem = "hexagon with side length " + length;
+      return regDem;
+    }
+    // septagon
+    if(sides == 7) {
+      regDem = "septagon with side length " + length;
+      return regDem;
+    }
+    // octagon
+    if(sides == 8) {
+      regDem = "octagon with side length " + length;
+      return regDem;
+    }
+    // nonagon
+    if(sides == 9) {
+      regDem = "nonagon with side length " + length;
+      return regDem;
+    }
+    // decagon
+    if(sides == 10) {
+      regDem = "decagon with side length " + length;
+      return regDem;
+    }
+    // hendecagon
+    if(sides == 11) {
+      regDem = "hendecagon with side length " + length;
+      return regDem;
+    }
+    // dodecagon
+    if(sides == 12) {
+      regDem = "dodecagon with side length " + length;
+      return regDem;
+    }
+    // tridecagon
+    if(sides == 13) {
+      regDem = "tridecagon with side length " + length;
+      return regDem;
+    }
+    // tetradecagon
+    if(sides == 14) {
+      regDem = "tetradecagon with side length " + length;
+      return regDem;
+    }
+    // pendedecagon
+    if(sides == 15) {
+      regDem = "pendedecagon with side length " + length;
+      return regDem;
+    // else
+    
+
+  }
+}
+}
 
 class MethodExplorer {
   public static void main(String[] args) {
-    Rectangle myRect = new Rectangle(5, 2);
-    Circle myCircle = new Circle(4);
-    System.out.println(myCircle);
-    myCircle.setRadius(2);
-    System.out.println(myCircle);
+    RegularPolygon p1 = new RegularPolygon();
+    RegularPolygon p2 = new RegularPolygon(4);
+    RegularPolygon p3 = new RegularPolygon(5);
+    RegularPolygon p4 = new RegularPolygon(6);
+    RegularPolygon p5 = new RegularPolygon(7);
+
+    System.out.println(p1.getArea());
+    System.out.println(p2.getArea());
+    System.out.println(p3.getArea());
+    System.out.println(p4.getArea());
+    System.out.println(p5.getArea());
     
   }
 }
