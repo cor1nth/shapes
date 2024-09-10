@@ -1,5 +1,6 @@
 // imports
 import java.lang.Math;
+import java.util.*;
 // Rectangle class
 class Rectangle {
   double length;
@@ -113,14 +114,11 @@ class Circle {
     return radius;
   }
   // scale two ways
-  double[] scale(double scal1, double scal2) {
+  double scale(double scal1, double scal2) {
     radius = radius * scal1;
     radius2 = radius2 * scal2;
-    double radArray[] = new double[2];
-    radArray[0] = radius;
-    radArray[1] = radius2;
-
-    return radArray;
+    List<Double> list = Arrays.asList(radius, radius2);
+    return list;
     
   }
 
@@ -131,7 +129,7 @@ class Circle {
     }
     else {
       
-      circleDem = "ellipsis with semi-major radius of " + radArray[0] + " and semi-minor radius of " + radArray[1];
+      circleDem = "ellipsis with semi-major radius of "  + " and semi-minor radius of " ;
       return circleDem;
     }
     
