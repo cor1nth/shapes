@@ -64,6 +64,7 @@ class Rectangle {
 // Circle Class
 class Circle {
   double radius;
+  double radius2;
   double area;
   double cum;
   double pi = 3.14;
@@ -77,11 +78,22 @@ class Circle {
   public Circle(double r) {
     radius = r;
   }
+  // circle with 2 specified radii (ellipsis)
+  public Circle(double r1, double r2) {
+    radius = r1;
+    radius2 = r2;
+  }
 
   // getArea
   double getArea() {
-    area = (pi * radius) * (pi * radius);
-    return area;
+    if (radius != 0.0 && radius2 == 0.0) {
+      area = (pi * radius) * (pi * radius);
+      return area;
+    }
+    else {
+      area = Math.PI * radius * radius2;
+      return area;
+    }
   }
 
   // get Circumference
@@ -101,11 +113,28 @@ class Circle {
     return radius;
   }
   // scale two ways
+  double[] scale(double scal1, double scal2) {
+    radius = radius * scal1;
+    radius2 = radius2 * scal2;
+    double radArray[] = new double[2];
+    radArray[0] = radius;
+    radArray[1] = radius2;
 
+    return radArray;
+    
+  }
 
   public String toString() {
-    circleDem = "circle with radius " + radius;
-    return circleDem;
+    if (radius != 0.0 && radius2 == 0.0) {
+      circleDem = "circle with radius " + radius;
+      return circleDem;
+    }
+    else {
+      
+      circleDem = "ellipsis with semi-major radius of " + radArray[0] + " and semi-minor radius of " + radArray[1];
+      return circleDem;
+    }
+    
   }
 
 }
