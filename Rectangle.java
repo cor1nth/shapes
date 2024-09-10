@@ -14,7 +14,7 @@ class Rectangle {
   }
 
   // Rectangle with double len
-  public Rectangle(int y) {
+  public Rectangle(double y) {
     length = y;
     width = y;
   }
@@ -239,26 +239,18 @@ class RegularPolygon {
     if(sides == 15) {
       regDem = "pendedecagon with side length " + length;
       return regDem;
-    // else
-    
-
-  }
+    }
+    else {
+      return regDem;
+    }
 }
 }
 
 class MethodExplorer {
   public static void main(String[] args) {
-    RegularPolygon p1 = new RegularPolygon();
-    RegularPolygon p2 = new RegularPolygon(4);
-    RegularPolygon p3 = new RegularPolygon(5);
-    RegularPolygon p4 = new RegularPolygon(6);
-    RegularPolygon p5 = new RegularPolygon(7);
+    RegularPolygon myRect = new RegularPolygon();
 
-    System.out.println(p1.getArea());
-    System.out.println(p2.getArea());
-    System.out.println(p3.getArea());
-    System.out.println(p4.getArea());
-    System.out.println(p5.getArea());
+    System.out.println(myRect);
     
   }
 }
