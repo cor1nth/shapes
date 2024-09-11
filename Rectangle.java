@@ -114,25 +114,26 @@ class Circle {
     return radius;
   }
   // scale two ways
-  double scale(double scal1, double scal2) {
+  double[] scale(double scal1, double scal2) {
     radius = radius * scal1;
     radius2 = radius2 * scal2;
-    List<Double> list = Arrays.asList(radius, radius2);
-    return list;
+    double[] arr = { radius, radius2 };
+    return arr;
     
   }
 
   public String toString() {
-    if (radius != 0.0 && radius2 == 0.0) {
+    if (radius >= 0.0 && radius2 == 0.0) {
       circleDem = "circle with radius " + radius;
       return circleDem;
     }
-    else {
-      
-      circleDem = "ellipsis with semi-major radius of "  + " and semi-minor radius of " ;
+    if (radius2 > 0.0) {
+      circleDem = "ellipsis with semi-major radius of " + radius + " and semi-minor radius of " + radius2;
       return circleDem;
     }
-    
+    else {
+      return circleDem;
+    }
   }
 
 }
@@ -286,6 +287,8 @@ class MethodExplorer {
     System.out.println(myCircle);
 
     myCircle.scale(2.2);
+    System.out.println(myCircle);
+    myCircle.scale(2, 4);
     System.out.println(myCircle);
     
   }
