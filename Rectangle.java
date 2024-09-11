@@ -78,11 +78,7 @@ class Circle {
   // Circle with specified radius
   public Circle(double r) {
     radius = r;
-  }
-  // circle with 2 specified radii (ellipsis)
-  public Circle(double r1, double r2) {
-    radius = r1;
-    radius2 = r2;
+    radius2 = r;
   }
 
   // getArea
@@ -123,17 +119,15 @@ class Circle {
   }
 
   public String toString() {
-    if (radius >= 0.0 && radius2 == 0.0) {
+    if (radius >= 0.0 && radius2 == radius) {
       circleDem = "circle with radius " + radius;
       return circleDem;
     }
-    if (radius2 > 0.0) {
+    else {
       circleDem = "ellipsis with semi-major radius of " + radius + " and semi-minor radius of " + radius2;
       return circleDem;
     }
-    else {
-      return circleDem;
-    }
+    
   }
 
 }
@@ -285,11 +279,11 @@ class MethodExplorer {
   public static void main(String[] args) {
     Circle myCircle = new Circle(3);
     System.out.println(myCircle);
+    System.out.println(myCircle.getArea());
 
-    myCircle.scale(2.2);
+    myCircle.scale(4, 10);
     System.out.println(myCircle);
-    myCircle.scale(2, 4);
-    System.out.println(myCircle);
+    System.out.println(myCircle.getArea());
     
   }
 }
