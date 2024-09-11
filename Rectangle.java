@@ -83,6 +83,9 @@ class Circle {
 
   // getArea
   double getArea() {
+    area = (pi * radius) * (pi * radius);
+    return area;
+    /* 
     if (radius != 0.0 && radius2 == 0.0) {
       area = (pi * radius) * (pi * radius);
       return area;
@@ -91,6 +94,7 @@ class Circle {
       area = Math.PI * radius * radius2;
       return area;
     }
+      */
   }
 
   // get Circumference
@@ -110,23 +114,30 @@ class Circle {
     return radius;
   }
   // scale two ways
-  double[] scale(double scal1, double scal2) {
+  double/*[] */ scale(double scal1, double scal2) {
+    radius = radius * scal1;
+    radius = radius * scal2;
+    return radius;
+    /* 
     radius = radius * scal1;
     radius2 = radius2 * scal2;
     double[] arr = { radius, radius2 };
     return arr;
+    */
     
   }
 
   public String toString() {
-    if (radius >= 0.0 && radius2 == radius) {
+    circleDem = "circle with radius " + radius;
+    return circleDem;
+    /*if (radius >= 0.0 && radius2 == radius) {
       circleDem = "circle with radius " + radius;
       return circleDem;
     }
     else {
       circleDem = "ellipsis with semi-major radius of " + radius + " and semi-minor radius of " + radius2;
       return circleDem;
-    }
+    } */
     
   }
 
